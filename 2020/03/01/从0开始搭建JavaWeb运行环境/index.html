@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>从0开始搭建JavaWeb运行环境(Maven-idea篇) - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="[TOC]
+1、安装配置Java环境
+csdn超详细java安装配置
+
+https://blog.csdn.net/qq_41436122/article/details/82620080?dept,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.1.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">从0开始搭建JavaWeb运行环境(Maven-idea篇)</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">从0开始搭建JavaWeb运行环境(Maven-idea篇)</h1>
+        <div class="stuff">
+            <span>三月 01, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/java/" rel="tag">java</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/jdbc/" rel="tag">jdbc</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/tomcat/" rel="tag">tomcat</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>[TOC]</p>
+<h2 id="1、安装配置Java环境"><a href="#1、安装配置Java环境" class="headerlink" title="1、安装配置Java环境"></a>1、安装配置Java环境</h2><ul>
+<li><p>csdn超详细java安装配置</p>
+</li>
+<li><p><a href="https://blog.csdn.net/qq_41436122/article/details/82620080?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/qq_41436122/article/details/82620080?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+</li>
+</ul>
+<h2 id="2、tomcat安装配置"><a href="#2、tomcat安装配置" class="headerlink" title="2、tomcat安装配置"></a>2、tomcat安装配置</h2><ul>
+<li><p>csdn超详细tomcat安装配置</p>
+</li>
+<li><p><a href="https://blog.csdn.net/qq_40881680/article/details/83582484" target="_blank" rel="noopener">https://blog.csdn.net/qq_40881680/article/details/83582484</a></p>
+</li>
+</ul>
+<h2 id="3、Mysql安装配置"><a href="#3、Mysql安装配置" class="headerlink" title="3、Mysql安装配置"></a>3、Mysql安装配置</h2><ul>
+<li><p>csdn超详细Mysql安装配置</p>
+</li>
+<li><p><a href="https://blog.csdn.net/theLostLamb/article/details/78797643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/theLostLamb/article/details/78797643?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+</li>
+</ul>
+<h2 id="4、Maven安装与使用"><a href="#4、Maven安装与使用" class="headerlink" title="4、Maven安装与使用"></a>4、Maven安装与使用</h2><ul>
+<li><p>bilibili超详细Maven使用详解</p>
+</li>
+<li><p><a href="https://www.bilibili.com/video/av54119831?from=search&amp;seid=7554296412515154846" target="_blank" rel="noopener">https://www.bilibili.com/video/av54119831?from=search&amp;seid=7554296412515154846</a></p>
+</li>
+<li><p>Maven是一个很好的项目管理工具使用它之后项目的编译，清理，导入jar包等操作都交给了Maven来处理,不用再费心去晚上慢慢的一个个的搜索jar包了，只需要添加依赖就行了</p>
+</li>
+<li><p>Maven的依赖库：<a href="https://mvnrepository.com/，可以找到所有的jar包依赖" target="_blank" rel="noopener">https://mvnrepository.com/，可以找到所有的jar包依赖</a></p>
+</li>
+</ul>
+<h2 id="5、创建idea-Maven-JavaWeb-项目"><a href="#5、创建idea-Maven-JavaWeb-项目" class="headerlink" title="5、创建idea Maven JavaWeb 项目"></a>5、创建idea Maven JavaWeb 项目</h2><p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302170318114.png" alt="image-20200302170318114"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302170550421.png" alt="image-20200302170550421"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302170918032.png" alt="image-20200302170918032"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302171030662.png" alt="image-20200302171030662"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302171535098.png" alt="image-20200302171535098"></p>
+<p><strong>下面这一步是关键</strong>，<strong>如何将一个普通的Maven项目变成我们的web项目，右键项目名点击添加框架支持</strong></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302171744210.png" alt="image-20200302171744210"></p>
+<p> <strong>勾选Java EE项目下的web application，现在一般最新的都是用的web 4.0，然后点击ok</strong></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302171955113.png" alt="image-20200302171955113"></p>
+<p><strong>此时我们的文件夹下多了一个web文件夹</strong>，<strong>就此我们就算完成了JavaWeb项目的创建</strong></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302172216423.png" alt="image-20200302172216423"></p>
+<h2 id="6、使用JDBC连接Mysql并读取数据"><a href="#6、使用JDBC连接Mysql并读取数据" class="headerlink" title="6、使用JDBC连接Mysql并读取数据"></a>6、使用JDBC连接Mysql并读取数据</h2><p><strong>在连接数据库之前我们先测试一下连接，idea为我们提供了数据库连接工具，点击右上角的database</strong></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173506073.png" alt="image-20200302173506073"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173541489.png" alt="image-20200302173541489"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173608859.png" alt="image-20200302173608859"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173823826.png" alt="image-20200302173823826"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173852719.png" alt="image-20200302173852719"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302173948194.png" alt="image-20200302173948194"></p>
+<p>测试完连接后我们就来写代码连接数据库，首先我们得去寻找并引入Mysql-JDBC的jar包，寻找jar包依赖的网站在maven安装与使用中有说明。</p>
+<p>我们这里拿到它的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.38<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302174839874.png" alt="image-20200302174839874"></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302174946984.png" alt="image-20200302174946984"></p>
+<p><strong>接下来在java文件夹下创建java class文件</strong></p>
+<p><img src="/2020/03/01/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BAJavaWeb%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/image-20200302175158677.png" alt="image-20200302175158677"></p>
+<p><strong>JAVA代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.mysql.jdbc.Connection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;</span><br><span class="line"></span><br><span class="line"><span class="comment">//封装JDBC连接相关的功能作为一个工具类，使用静态变量与静态方法便于使用</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String diver=<span class="string">"com.mysql.jdbc.Driver"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String url=<span class="string">"jdbc:mysql://localhost:3306/axw?characterEncoding=UTF-8&amp;useSSL=true"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String username=<span class="string">"root"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String password=<span class="string">"axw112630"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取JDBC连接</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Connection connection=<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class.forName(diver);</span><br><span class="line">            connection= (Connection) DriverManager.getConnection(url,username,password);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> connection;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//JDBC连接测试</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JDBCUtiltest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Connection connection=JDBCUtil.getConnection();</span><br><span class="line">        String sql=<span class="string">"select * from axw.books"</span>;</span><br><span class="line">        Statement statement=connection.createStatement();</span><br><span class="line">        ResultSet resultSet=statement.executeQuery(sql);</span><br><span class="line">        <span class="keyword">while</span>(resultSet.next())&#123;</span><br><span class="line">            String bookID=resultSet.getString(<span class="string">"bookID"</span>);</span><br><span class="line">            String bookName=resultSet.getString(<span class="string">"bookName"</span>);</span><br><span class="line">            String bookCounts=resultSet.getString(<span class="string">"bookCounts"</span>);</span><br><span class="line">            String detail=resultSet.getString(<span class="string">"detail"</span>);</span><br><span class="line">            System.out.print(<span class="string">" bookID: "</span>+bookID);</span><br><span class="line">            System.out.print(<span class="string">" bookName: "</span>+bookName);</span><br><span class="line">            System.out.print(<span class="string">" bookCounts: "</span>+bookCounts);</span><br><span class="line">            System.out.println(<span class="string">" detail: "</span>+detail);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>SQL scripts</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">'books'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">'books'</span> (</span><br><span class="line">  <span class="string">'bookID'</span> <span class="built_in">INT</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'书id'</span>,</span><br><span class="line">  <span class="string">'bookName'</span> <span class="built_in">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'书名'</span>,</span><br><span class="line">  <span class="string">'bookCounts'</span> <span class="built_in">INT</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'数量'</span>,</span><br><span class="line">  <span class="string">'detail'</span> <span class="built_in">VARCHAR</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'描述'</span>,</span><br><span class="line">  <span class="keyword">KEY</span> <span class="string">'bookID'</span> (<span class="string">'bookID'</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">INNODB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span>  <span class="keyword">INTO</span> <span class="string">'books'</span>(<span class="string">'bookID'</span>,<span class="string">'bookName'</span>,<span class="string">'bookCounts'</span>,<span class="string">'detail'</span>)<span class="keyword">VALUES</span> </span><br><span class="line">(<span class="number">1</span>,<span class="string">'Java'</span>,<span class="number">1</span>,<span class="string">'从入门到放弃'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'MySQL'</span>,<span class="number">10</span>,<span class="string">'从删库到跑路'</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="string">'Linux'</span>,<span class="number">5</span>,<span class="string">'从进门到进牢'</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>运行结果</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bookID: <span class="number">1</span> bookName: Java bookCounts: <span class="number">1</span> detail: 从入门到放弃</span><br><span class="line">bookID: <span class="number">2</span> bookName: MySQL bookCounts: <span class="number">10</span> detail: 从删库到跑路</span><br><span class="line">bookID: <span class="number">3</span> bookName: Linux bookCounts: <span class="number">5</span> detail: 从进门到进牢</span><br></pre></td></tr></table></figure>
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='b109e4ca7e004c44b136'
+        data-cs='96b4ed53f1bae314bd245cda24bb25623508a5c0'
+        data-r='Hexo'
+        data-o='Aiwowo-404'
+        data-a='Aiwowo-404'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

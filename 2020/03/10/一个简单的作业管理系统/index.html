@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>一个简单的作业管理系统 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="[TOC]
+前提：需要掌握jdbc，jsp，servlet
+Github源码地址：
+https://github.com/Aiwowo-404/The-first-JavaWeb
+1、一个简单的Ja,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.1.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">一个简单的作业管理系统</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">一个简单的作业管理系统</h1>
+        <div class="stuff">
+            <span>三月 10, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>[TOC]</p>
+<p><strong>前提：需要掌握jdbc，jsp，servlet</strong></p>
+<p><strong>Github源码地址：</strong></p>
+<p><a href="https://github.com/Aiwowo-404/The-first-JavaWeb" target="_blank" rel="noopener">https://github.com/Aiwowo-404/The-first-JavaWeb</a></p>
+<h2 id="1、一个简单的JavaWeb架构设计"><a href="#1、一个简单的JavaWeb架构设计" class="headerlink" title="1、一个简单的JavaWeb架构设计"></a>1、一个简单的JavaWeb架构设计</h2><p><img src="/2020/03/10/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/%E6%9E%B6%E6%9E%84.svg" alt="架构"></p>
+<p>拦截器用于拦截请求，验证登录以及是否有权限访问一些数据（在此次项目中并未实现，手写拦截器需要用到代理思想实现横切,要使用建议还是去使用Springframework中的拦截器）</p>
+<p>Servlet主要用于接受http请求并执行相应的方法来调用对应的业务</p>
+<p>Service主要专注于业务的实现</p>
+<p>Dao主要专注于数据的调用</p>
+<p>分层的主要目的是让每一层专注于处理自己的事情，解耦</p>
+<h2 id="2、作业管理系统结构分析"><a href="#2、作业管理系统结构分析" class="headerlink" title="2、作业管理系统结构分析"></a>2、作业管理系统结构分析</h2><p><img src="/2020/03/10/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%9C%E4%B8%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/image-20200310120031735.png" alt="image-20200310120031735"></p>
+<h4 id="1-Controller文件夹"><a href="#1-Controller文件夹" class="headerlink" title="(1) Controller文件夹"></a>(1) Controller文件夹</h4><ul>
+<li>StudentController<ul>
+<li>StudentHomeServlet</li>
+<li>StudentLoginServlet</li>
+<li>SubmitServlet</li>
+</ul>
+</li>
+<li>TeacherController<ul>
+<li>TeacherHomeServlet</li>
+<li>TeacherLoginServlet</li>
+<li>ReleaseServlet</li>
+</ul>
+</li>
+</ul>
+<p><strong>StudentController主要专注于学生访问的处理</strong></p>
+<p>StudentLoginServlet处理学生登录请求，验证成功后转发到StudentHomeServlet进行数据的添加接着交给jsp渲染数据将视图返回给用户,SubmitServlet用户处理学生作业的提交</p>
+<p><strong>TeacherController主要专注于教师访问的处理</strong></p>
+<p>TeacherLoginServlet处理教师登陆请求，验证成功后转发到TeacherHomeServlet进行数据的添加接着交给jsp渲染数据将视图返回给用户,ReleaseServlet用于发布作业</p>
+<h4 id="2-Dao文件夹"><a href="#2-Dao文件夹" class="headerlink" title="(2) Dao文件夹"></a>(2) Dao文件夹</h4><ul>
+<li>HomeworkDao</li>
+<li>StudentDao</li>
+<li>TeacherDao</li>
+</ul>
+<p><strong>HomeworkDao用于处理有关homework表的数据</strong></p>
+<p><strong>StudentDao用于处理有关student表的数据</strong></p>
+<p><strong>teacherDao用于处理有关teacher表的数据</strong></p>
+<h4 id="3-Pojo文件夹"><a href="#3-Pojo文件夹" class="headerlink" title="(3) Pojo文件夹"></a>(3) Pojo文件夹</h4><ul>
+<li>Student</li>
+<li>Teacher</li>
+<li>Homework</li>
+</ul>
+<p><strong>Student类用于封装student数据</strong></p>
+<p><strong>Teacher类用于封装Teacher数据</strong></p>
+<p><strong>Homework类用于封装Homework数据</strong></p>
+<h4 id="4-Service文件夹"><a href="#4-Service文件夹" class="headerlink" title="(4) Service文件夹"></a>(4) Service文件夹</h4><ul>
+<li>StudentService</li>
+<li>TeacherService</li>
+</ul>
+<p><strong>StudentService用于处理Student访问时StudentController应该调用的业务，Service获取数据可以从多个Dao层中获取他想要获取的数据，因此这个层可能注入多个Dao</strong></p>
+<p><strong>TeacherService同上StudentService</strong></p>
+<h4 id="5-Util文件夹"><a href="#5-Util文件夹" class="headerlink" title="(5) Util文件夹"></a>(5) Util文件夹</h4><ul>
+<li>JDBCUtil</li>
+</ul>
+<p><strong>Util文件夹主要用来放置封装好的一些工具，比如说发送短信的api，等等。这里只放置了连接mysql数据库的jdbcutil，通过jdbcutil来获取connection</strong></p>
+<h2 id="3、一个简单的业务逻辑分析"><a href="#3、一个简单的业务逻辑分析" class="headerlink" title="3、一个简单的业务逻辑分析"></a>3、一个简单的业务逻辑分析</h2><p><strong>一个简单的http请求访问展示，实现用户登陆（具体代码参考github）</strong></p>
+<p>用户登录一般需要拦截器来进行身份验证，我这里没有使用拦截器，如果使用了拦截器，就会先对请求分类，对于不同的请求执行不同的操作，比如说现在是发出了一个登陆的http请求拦截器就会直接放行将请求转发到验证登录的servlet，如果是一个登陆之后内部的数据请求，就会先进行拦截，判断你是否已经登陆，我这里采用的是session判断，用户如果登录成功就把用户信息放入session，请求内部数据时在拦截器session中的该请求所对应key的值，如果为null，就判断不可访问内部数据，并将请求重定向要求用户登录，如果有数据就放行</p>
+<p>关于session是什么可以这样理解，session是放在服务端的一个存储键值对的东西</p>
+<p>当向服务器发送某个http请求的时候，会在服务器端的内存里开辟一块内存，这块内存就叫做session，而这个内存是跟浏览器关联在一起的。这个浏览器指的是浏览器窗口，或者是浏览器的子窗口，意思就是，只允许当前这个session对应的浏览器访问，就算是在同一个机器上新启的浏览器也是无法访问的。而另外一个浏览器也需要记录session的话，就会再启一个属于自己的session</p>
+<p><strong>代码</strong></p>
+<p><strong>StudentLoginServlet.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.axw.Controller.StudentController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.axw.Pojo.Student;</span><br><span class="line"><span class="keyword">import</span> com.axw.Service.StudentService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/goLoginStudent"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentLoginServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//实体类封装好验证信息</span></span><br><span class="line">        Student student=<span class="keyword">new</span> Student();</span><br><span class="line">        student.setId(req.getParameter(<span class="string">"id"</span>));</span><br><span class="line">        student.setPassword(req.getParameter(<span class="string">"password"</span>));</span><br><span class="line">        StudentService studentService=<span class="keyword">new</span> StudentService();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//调用业务层验证信息,成功后将信息存在session中</span></span><br><span class="line">            <span class="keyword">if</span>(studentService.checkStudent(student))&#123;</span><br><span class="line">       			     req.getSession().setAttribute(req.getSession().getId()+<span class="string">"student"</span>,studentService.getStudentById(student.getId()));</span><br><span class="line">                resp.setHeader(<span class="string">"content-type"</span>,<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">                resp.getWriter().print(<span class="string">"&lt;script language='javascript'&gt;alert('登录成功');window.location.href='StudentHome';&lt;/script&gt;"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//没通过验证进行重定向到登陆页面</span></span><br><span class="line">                resp.sendRedirect(<span class="string">"/login"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>StudentService中的一个方法boolean checkStudent()</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Boolean <span class="title">checkStudent</span><span class="params">(Student student)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="comment">//调用dao层的方法</span></span><br><span class="line">    Student realstudent=studentDao.getStudentByID(student.getId());</span><br><span class="line">    <span class="keyword">if</span>(realstudent==<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(realstudent.getPassword().equals(student.getPassword()))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>StudentDao中的一个方法Student getStudentByID()</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Student <span class="title">getStudentByID</span><span class="params">(String id)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="comment">//从JDBCutil中获取连接</span></span><br><span class="line">   Connection connection=JDBCUtil.getConnection();</span><br><span class="line">   String sql=<span class="string">"select * from axw.student where id = "</span>+id+<span class="string">";"</span>;</span><br><span class="line">   Statement statement=connection.createStatement();</span><br><span class="line">   ResultSet resultSet=statement.executeQuery(sql);</span><br><span class="line">   <span class="keyword">if</span>(resultSet.next())&#123;</span><br><span class="line">       Student student=<span class="keyword">new</span> Student();</span><br><span class="line">       student.setId(resultSet.getString(<span class="string">"id"</span>));</span><br><span class="line">       student.setName(resultSet.getString(<span class="string">"name"</span>));</span><br><span class="line">       student.setPassword(resultSet.getString(<span class="string">"password"</span>));</span><br><span class="line">       connection.close();</span><br><span class="line">       <span class="keyword">return</span> student;</span><br><span class="line">   &#125;</span><br><span class="line">   connection.close();</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>StudentHomeServlet.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.axw.Controller.StudentController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.axw.Pojo.Student;</span><br><span class="line"><span class="keyword">import</span> com.axw.Service.StudentService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/StudentHome"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentHomeServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        StudentService studentService=<span class="keyword">new</span> StudentService();</span><br><span class="line">        <span class="comment">//从session中获取student信息</span></span><br><span class="line">        Student student= (Student) req.getSession().getAttribute(req.getSession().getId()+<span class="string">"student"</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            req.setAttribute(<span class="string">"homework"</span>,studentService.getAllHomeworkByStudent(student));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        req.getRequestDispatcher(<span class="string">"WEB-INF/jsp/StudentHome.jsp"</span>).forward(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>这是一个http请求的简单访问流程，其他访问流程可以查看具体代码，这个项目实现比较有限，外观有点丑陋，主要目的是展示后台运行的基本流程与结构</strong></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='b109e4ca7e004c44b136'
+        data-cs='96b4ed53f1bae314bd245cda24bb25623508a5c0'
+        data-r='Hexo'
+        data-o='Aiwowo-404'
+        data-a='Aiwowo-404'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
